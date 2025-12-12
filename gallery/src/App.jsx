@@ -54,6 +54,7 @@ useEffect(
         <button className='bg-yellow-700 p-2 rounded-3xl font-extrabold
         font-mono hover:bg-red-700'
         onClick={prev}
+        style= {{opacity : page==1?0.4:1}}
         >Previous</button>
 
         <button className='bg-red-700 p-2 rounded-3xl font-extrabold
