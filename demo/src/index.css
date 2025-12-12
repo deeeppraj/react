@@ -1,0 +1,142 @@
+/* Parent container that holds all cards */
+.parent{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;          /* allow rows */
+  gap: 16px;                /* spacing between cards */
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: black;
+  border-radius: 15px;
+}
+
+/* Each card takes 1/4 of the row (minus gap) */
+.card{
+  flex: 0 0 calc(25% - 12px); /* 4 cards per row */
+  background-color: whitesmoke;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
+  min-width: 220px; /* prevents becoming too narrow */
+  max-width: 400px;
+  /* subtle shadow for depth */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* header row inside card: logo + save */
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.logo img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.save{
+  border: 0.5px solid grey;
+  border-radius: 6px;
+  height: 30px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(206, 203, 203);
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+
+/* content area */
+.content{
+  display: block;
+  margin-left: 4px;
+  margin-bottom: 12px;
+}
+.name{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.name p{
+  color: rgb(141, 140, 140);
+  font-size: 0.9rem;
+  margin: 0;
+}
+.role{
+  margin: 8px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* skill/tag buttons */
+.skill{
+  display: flex;
+  gap: 12px;
+}
+.skill button{
+  height: 36px;
+  padding: 0 12px;
+  background-color: rgb(141, 137, 137);
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* bottom apply/salary row */
+.apply{
+  border-top: 1px solid #ccc;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.salary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.a{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.a h1{
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.a p{
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+.b button{
+  background-color: black;
+  height: 44px;
+  width: 110px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive breakpoints */
+/* 2 cards per row on medium screens */
+@media (max-width: 900px) {
+  .card { flex: 0 0 calc(50% - 12px); }
+}
+
+/* 1 card per row on small screens */
+@media (max-width: 600p
